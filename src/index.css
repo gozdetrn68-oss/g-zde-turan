@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Quicksand:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Quicksand", sans-serif;
+
+  --color-primary: #00629d;
+  --color-primary-container: #00a3ff;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #00375a;
+
+  --color-secondary: #006d37;
+  --color-secondary-container: #6bfe9c;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #00743a;
+
+  --color-tertiary: #735c00;
+  --color-tertiary-container: #bd9900;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #413300;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  --color-background: #f7f9fb;
+  --color-on-background: #191c1e;
+  --color-surface: #f7f9fb;
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #3f4852;
+  --color-inverse-surface: #2d3133;
+  --color-inverse-on-surface: #eff1f3;
+  --color-surface-container: #eceef0;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #e0e3e5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-bright: #f7f9fb;
+  --color-surface-dim: #d8dadc;
+  --color-surface-variant: #e0e3e5;
+  
+  --color-primary-fixed: #cfe5ff;
+  --color-primary-fixed-dim: #98cbff;
+  --color-on-primary-fixed: #001d33;
+  --color-on-primary-fixed-variant: #004a77;
+
+  --color-secondary-fixed: #6bfe9c;
+  --color-secondary-fixed-dim: #4ae183;
+  --color-on-secondary-fixed: #00210c;
+  --color-on-secondary-fixed-variant: #005228;
+
+  --color-tertiary-fixed: #ffe084;
+  --color-tertiary-fixed-dim: #eec209;
+  --color-on-tertiary-fixed: #231b00;
+  --color-on-tertiary-fixed-variant: #574500;
+  
+  --color-outline: #6f7883;
+  --color-outline-variant: #bec7d4;
+  
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .tactile-shadow {
+    box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .tactile-button-primary {
+    @apply transition-all active:translate-y-[2px];
+    box-shadow: 0 4px 0 0 #004a77;
+  }
+  
+  .tactile-button-primary:active {
+    box-shadow: 0 1px 0 0 #004a77;
+  }
+
+  .tactile-button-secondary {
+    @apply transition-all active:translate-y-[2px];
+    box-shadow: 0 4px 0 0 #005228;
+  }
+  
+  .tactile-button-secondary:active {
+    box-shadow: 0 1px 0 0 #005228;
+  }
+
+  .tactile-card {
+    border-bottom: 4px solid var(--color-surface-container-highest);
+  }
+}
